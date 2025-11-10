@@ -1,3 +1,10 @@
+
+/**
+ * 난수 생성용 클래스
+ * @author KCH
+ * create_date : 2025.11.10
+ */
+
 package common;
 
 import java.util.ArrayList;
@@ -6,18 +13,25 @@ import java.util.List;
 public class RandomNumberGenerater {
 	
 	private List<Integer> numbers = new ArrayList<>(); 
-	//기본타입을 제네릭으로 쓸 수 없는 이유 : 기본타입은 Object타입을 상속받지 않기 때문에
-	//제네릭의 타입을 컴파일 시 (바이트코드로 변환 시) Object 타입으로 변환하여 사용
 	
-	public boolean randomNumberGenerater(int num) {
+	public List<Integer> randomNumberGenerater(int num) {
 		
-		boolean flag = false;
+		//boolean flag = false;
 		
 		for(int i=0;i<num;i++) {
-			int randomNum = (int)(Math.random())+1;
+			int randomNum = (int)(Math.random()*256);
 			numbers.add(randomNum);
 		}
-		return true;
+		
+		printRandomNums(num);
+		
+		return this.numbers;
+	}
+	private void printRandomNums(int num) {
+		System.out.println("생성된 난수");
+		for(int nums:numbers) {
+			System.out.print(nums+" ");
+		}
 	}
 	
 }
