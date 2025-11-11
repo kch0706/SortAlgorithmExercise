@@ -7,6 +7,17 @@
 
 package sortAlgoritymClasses;
 
+import common.TimeRecord;
+
 public class CommonFunction {
+	TimeRecord time = new TimeRecord();
+	
+	void startTime() {
+		time.startTime();
+	}
+	void endTime() {
+		time.endTime();
+	}
+	
 	
 }

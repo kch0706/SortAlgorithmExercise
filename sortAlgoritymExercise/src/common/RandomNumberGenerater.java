@@ -32,6 +32,7 @@ public class RandomNumberGenerater {
 		for(int nums:numbers) {
 			System.out.print(nums+" ");
 		}
+		System.out.println("\n");
 	}
 	
 }
