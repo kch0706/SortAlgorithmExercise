@@ -22,6 +22,7 @@ package common;
 import java.util.List;
 
 import sortAlgoritymClasses.BubbleSort;
+import sortAlgoritymClasses.SelectionSort;
 import sortAlgoritymClasses.SortFunctions;
 
 public class Sort {
@@ -34,11 +35,12 @@ public class Sort {
 		
 		int amount = 20;
 		
-		String sortMethod = "DESC";
+		String sortMethod = "ASC";
 		
 		List<Integer> list = random.randomNumberGenerater(amount);
 		
-		SortFunctions sort = new BubbleSort(list);
+		//SortFunctions sort = new BubbleSort(list);
+		SortFunctions sort = new SelectionSort(list);
 		
 		if(sortMethod.equals("ASC")) {
 			list = sort.ASCsort();
