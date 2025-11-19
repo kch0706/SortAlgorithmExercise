@@ -92,6 +92,15 @@ public class SelectionSort extends CommonFunction implements SortFunctions{
 		
 		System.out.println("선택정렬 내림차순");
 		
+		int count = 1;
+		
+		//시작시간 기록
+		this.time.startTime();
+		
+		for(int i=0;i<list.size();i++) {
+			
+		}
+		
 		return this.list;
 	}
 	
