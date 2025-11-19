@@ -24,47 +24,59 @@ public class SelectionSort extends CommonFunction implements SortFunctions{
 
 	@Override
 	public List<Integer> ASCsort() {
-		
-		//처음 값 가지고 나머지 수 모두와 비교
-		//처음 값보다 작으면서 제일 작은 수를 처음 값과 위치 변경
+
+		//1. 처음 값을 메모리에 저장
+		//2. 처음 값과 나머지 값들을 비교
+		//3. 만약 처음 값이 비교하는 수보다 작고 메모리의 수가 비교하는 수보다 작다면 
+		//메모리의 수에 비교하는 수를 대입
+		//4. 더이상 비교할 수가 없고 메모리의 수가 제일 작으면 메모리의 수를 현재 값과 위치변경
+		//5. 정렬 된 수를 제외한 나머지 수들을 다시 비교
 		
 		System.out.println("선택정렬 오름차순");
 		
 		int count = 1;
-		//boolean flag = true;
 		
 		//정렬 시작시간 기록
 		this.time.startTime();
 		
 		for(int i=0;i<list.size();i++) {
 			
+			//int nowNum = list.get(i);
+			int minNum = 0;
+			int minNumIndex = 0;
+			int compNum = 0;
 			int tempNum = 0;
-			Integer minNum = 0;
-			Integer minNumIndex = null;
 			
-			for(int j=0;j<list.size();j++) {
+			for(int j=i;j<list.size();j++) {
 				
-				//현재값과 다른 값의 비교
-				//(현재값보다 작은 값을 임시변수에 넣음)
-				if(list.get(i) > list.get(j) || minNum > list.get(j)) {
-					//System.out.println("값 비교중!");
-					minNum = list.get(j);
+				compNum = list.get(j);
+				
+				if(i==j) {
+					minNum = compNum;
+				}
+				
+				if(minNum>compNum) {
+					minNum = compNum;
 					minNumIndex = j;
 				}
-
-			
+				
+				//System.out.print(minNum+" ");
 			}
+			//System.out.println("");
 			
-			//최소값이 있다면 최소값과 현재 값 위치 변경
-			if(minNum != null && minNumIndex != null) {
+			if(list.get(i)!=minNum) {
+
 				tempNum = list.get(i);
 				list.set(i, minNum);
 				list.set(minNumIndex, tempNum);
+				
 			}
+			System.out.println(count+" 번 째 정렬 결과");
 			for(int k:list) {
-				System.out.print(k + " ");
+				System.out.print(k+" ");
 			}
 			System.out.println("");
+			count++;
 		}
 		
 		//정렬 끝 시간 기록

@@ -39,7 +39,9 @@ public class Sort {
 		
 		List<Integer> list = random.randomNumberGenerater(amount);
 		
+		//버블정렬
 		//SortFunctions sort = new BubbleSort(list);
+		//선택정렬
 		SortFunctions sort = new SelectionSort(list);
 		
 		if(sortMethod.equals("ASC")) {
