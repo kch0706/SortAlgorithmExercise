@@ -97,7 +97,7 @@ public class SelectionSort extends CommonFunction implements SortFunctions{
 		//시작시간 기록
 		this.time.startTime();
 		
-		for(int i=0;i<list.size();i++) {
+		for(int i=list.size();i==0;i--) {
 			
 		}
 		
